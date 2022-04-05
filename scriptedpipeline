@@ -1,0 +1,14 @@
+node {
+    stage(' git pull https://github.com/samikshasomnathe/DEVOPS.git'){
+    }
+       
+    stage('Build') { 
+        echo "builed"
+    }
+    stage('Test') { 
+        echo "tested"
+    }
+    stage('Deploy') { 
+        echo "deployed"
+    }
+}
