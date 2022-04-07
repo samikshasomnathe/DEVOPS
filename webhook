@@ -7,23 +7,10 @@ Configure system->github->advance->copy the following url:
 
 
 
-
-
-
-
-
 2:GIT hub: select repository->settings->webhooks->add webhook->pest url into playod->do following configuration:
  1.playod:http://13.229.105.14:8080/github-webhook/
  2.applcation json
 3.send me everything
-
-
-
-
-
-
-
-
 
 3:Jenkins:-
 New item[webhooks]
