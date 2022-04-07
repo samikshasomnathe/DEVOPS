@@ -2,7 +2,7 @@
 STEPS:1-manage Jenkins->available[github]->install without restart
 Manage plugin->
 Configure system->github->advance->copy the following url:
- 
+ http://13.229.105.14:8080/github-webhook/
 
 
 
@@ -12,9 +12,10 @@ Configure system->github->advance->copy the following url:
 
 
 
-2:GIT hub: settings->webhooks->add webhook->pest url into playod->do following configuration:
- 
-
+2:GIT hub: select repository->settings->webhooks->add webhook->pest url into playod->do following configuration:
+ 1.playod:http://13.229.105.14:8080/github-webhook/
+ 2.applcation json
+3.send me everything
 
 
 
@@ -29,4 +30,5 @@ New item[webhooks]
 Freestyle
 Ok
 And do following changes :
-  
+1.Source Code Management:git
+  2build trigger:GitHub hook trigger for GITScm polling
