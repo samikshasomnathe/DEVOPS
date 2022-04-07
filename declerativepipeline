@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     stages {
-        stage('Pull') { 
+        stage('git pull "https://github.com/samikshasomnathe/DEVOPS"') { 
             steps {
                 echo "pulled"
             }
