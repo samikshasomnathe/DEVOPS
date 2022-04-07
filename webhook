@@ -1,0 +1,32 @@
+ WEBHOOK: automated the pipeline
+STEPS:1-manage Jenkins->available[github]->install without restart
+Manage plugin->
+Configure system->github->advance->copy the following url:
+ 
+
+
+
+
+
+
+
+
+
+2:GIT hub: settings->webhooks->add webhook->pest url into playod->do following configuration:
+ 
+
+
+
+
+
+
+
+
+
+
+3:Jenkins:-
+New item[webhooks]
+Freestyle
+Ok
+And do following changes :
+  
