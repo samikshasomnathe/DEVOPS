@@ -1,5 +1,15 @@
-job('Hello World') {
+job('ankita') {
   steps {
-    shell('echo "Hello World!"')
+    shell('echo "Hello ankita!"')
+  }
+}
+job('nilu') {
+  steps {
+    shell('echo "Hello nilu!"')
+  }
+}
+job('ashi') {
+  steps {
+    shell('echo "Hello ashi!"')
   }
 }
