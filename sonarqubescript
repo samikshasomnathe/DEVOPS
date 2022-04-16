@@ -19,9 +19,16 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') { 
+       stage('QualityCheck'){
             steps {
-                echo "deployed"
+                timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate true
+                }
+            }
+        }
+        stage('Deploy'){
+            steps {
+                deploy adapters: [tomcat8(credentialsId: ': 6e0f67d2744278037c6c4b30f94f6c569fb0ad13', path: '', url: 'http://13.229.105.14:8080/')], contextPath: '/', war: '**/*.war'
             }
         }
     }
