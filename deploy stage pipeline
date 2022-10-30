@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    stages {
+        stage('Pull'){
+            steps {
+                git credentialsId: 'a42ebfb6-894d-41a4-91a2-fb6620fdb893', url: 'https://github.com/Kailas54321/studentapp-ui.git'
+            }
+        }
+        stage('Build'){
+            steps 
+        }{
+                sh 'mvn clean package'
+            }
+                stage('Test') { 
+            
+            steps {
+                withSonarQubeEnv(installationName:'sonar',credentialsId:'sonarqube'){
+                     sh 'mvn sonar:sonar'
+                }
+            }
+        }
+        
+        stage('Deploy'){
+            steps {
+              deploy adapters: [tomcat8(credentialsId: '04d8f15c-7e4d-4e21-8322-864726712bde', path: '', url: 'http://34.227.116.224:8080/')], contextPath: '/', war: '**/*.war'
+            }
+        }
+    }
+}

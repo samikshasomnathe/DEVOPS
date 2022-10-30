@@ -1,0 +1,20 @@
+pipeline {
+    agent {label 'tomcat'}
+    stages {
+        stage('Pull'){
+            steps {
+                git 'https://github.com/shubhamkalsait/studentapp-ui.git'
+            }
+        }
+        stage('Build'){
+            steps {
+                sh 'mvn clean package '
+            }
+        }
+        stage('Test'){
+            steps {
+                     echo "test"
+                }
+             }
+    }
+}
